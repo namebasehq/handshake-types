@@ -132,4 +132,51 @@ export type HandshakeTransaction = {
   locktime: number,
   hex: string,
 };
+
+type FullNodeVersion = '0.0.0';
+type HandshakeNetwork = 'main' | 'testnet' | 'simnet' | 'regtest';
+type IpAddress = string;
+type Port = number;
+type Agent = '/hsd:0.0.0/';
+export type FullNodeInfo = {
+  version: FullNodeVersion,
+  network: HandshakeNetwork,
+  chain: {
+    height: number,
+    tip: Hash,
+    treeRoot: Hash,
+    progress: number,
+    state: {
+      tx: number,
+      coin: number,
+      value: number,
+      burned: number,
+    },
+  },
+  pool: {
+    host: IpAddress,
+    port: Port,
+    agent: Agent,
+    services: string,
+    outbound: number,
+    inbound: number,
+  },
+  mempool: {
+    tx: number,
+    size: number,
+  },
+  time: {
+    uptime: number,
+    system: number,
+    adjusted: number,
+    offset: number,
+  },
+  memory: {
+    total: number,
+    jsHeap: number,
+    jsHeapTotal: number,
+    nativeHeap: number,
+    external: number,
+  },
+};
 ```
