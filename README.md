@@ -15,6 +15,8 @@ type Nonce = string; // 32 bytes
 type BlockHash = string; // 32 bytes
 type Version = string; // 1 byte
 type Address = string; // 2-40 bytes
+type ClaimHeight = Height; // 4 bytes
+type RenewalCount = string; // 4 bytes
 
 export type NoneCovenant = {
   type: 0,
@@ -69,7 +71,7 @@ export type TransferCovenant = {
 export type FinalizeCovenant = {
   type: 10,
   action: 'FINALIZE',
-  items: [NameHash, Height, Name, Flags, BlockHash],
+  items: [NameHash, Height, Name, Flags, ClaimHeight, RenewalCount, BlockHash],
 };
 export type RevokeCovenant = {
   type: 11,
