@@ -135,6 +135,23 @@ export type HandshakeTransaction = {
   hex: string,
 };
 
+export type Block = {
+  hash: string,
+  height: number,
+  depth: number,
+  version: number,
+  prevBlock: string,
+  merkleRoot: string,
+  witnessRoot: string,
+  treeRoot: string,
+  filterRoot: string,
+  reservedRoot: string,
+  time: number,
+  bits: number,
+  nonce: string,
+  txs: HandshakeTransaction[],
+};
+
 type FullNodeVersion = '0.0.0';
 type HandshakeNetwork = 'main' | 'testnet' | 'simnet' | 'regtest';
 type IpAddress = string;
