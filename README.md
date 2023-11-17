@@ -9,6 +9,8 @@ type NameHash = string; // 32 bytes
 type Height = string; // 4 bytes
 type Name = string; // Buffer.from(x: Name, 'hex').toString('ascii')
 type Flags = string; // 1 byte
+type CommitHash = string; // 32 bytes
+type CommitHeight = string; // 4 bytes
 type Hash = string; // 32 bytes
 type RecordData = string; // 512 bytes
 type Nonce = string; // 32 bytes
@@ -26,7 +28,7 @@ export type NoneCovenant = {
 export type ClaimCovenant = {
   type: 1,
   action: 'CLAIM',
-  items: [NameHash, Height, Name, Flags],
+  items: [NameHash, Height, Name, Flags, CommitHash, CommitHeight],
 };
 export type OpenCovenant = {
   type: 2,
